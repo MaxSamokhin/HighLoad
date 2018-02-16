@@ -2,6 +2,11 @@
 
 import os
 import socket
+import logging
+
+logging.basicConfig(filename="info.log",
+                    level=logging.INFO,
+                    format="%(asctime)s:%(levelname)s:%(message)s")
 
 
 class Server:
@@ -11,12 +16,13 @@ class Server:
         self.pid_workers = []
 
     def start(self):
-        print('server start')
+        logging.info('server start')
+
         with socket.socket() as sock:
             sock.bind(self.address_pair)
             sock.listen()
 
-            print('parent pid: {}'.format(os.getpid()))
+            logging.info('parent pid: {}'.format(os.getpid()))
 
             for _ in range(self.workers):
                 pid = os.fork()
@@ -26,19 +32,21 @@ class Server:
 
                 if pid == 0:
 
-                    print('child pid: {}'.format(os.getpid()))
+                    logging.info('child pid: {}'.format(os.getpid()))
                     while True:
                         conn, adr = sock.accept()
                         with conn:
                             # while True:
-                            data = conn.recv(1024)
+
+                            logging.info('my pid is {}'.format(os.getpid()))
+                            data = conn.recv(5)
                             print(data.decode("utf8"))
 
                 else:
                     self.pid_workers.append(pid)
-                    print('parent pid: {} children pid: {}'.format(os.getpid(), pid))
+                    logging.info('parent pid: {} children pid: {}'.format(os.getpid(), pid))
 
             print(self.pid_workers)
             for pid in self.pid_workers:
-                print('kill workers: {} '.format(pid))
+                logging.info('kill workers: {} '.format(pid))
                 os.waitpid(pid, 0)
