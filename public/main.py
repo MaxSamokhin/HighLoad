@@ -1,9 +1,11 @@
 from server import Server
 from constant import *
+from logger import Logger
 
 
 def main():
-    server = Server(HOST, PORT, WORKERS)
+    Logger.info('Main')
+    server = Server(HOST, PORT, WORKERS, SIZE_QUEUE, CHUNK)
     server.start()
 
 
