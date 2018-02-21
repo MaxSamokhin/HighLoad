@@ -3,6 +3,7 @@
 import os
 import socket
 from logger import Logger
+from parser import Parser
 
 
 class Server:
@@ -34,10 +35,21 @@ class Server:
                     while True:
                         conn, adr = sock.accept()
                         with conn:
-
                             request = conn.recv(self.chunk)
                             Logger.info(request.decode('utf8'))
-                            conn.sendall('your data: {}'.format(request.decode('utf8')).encode('utf8'))
+
+                            print('Request: {}'.format(request.decode()))
+
+                            parser = Parser(request.decode())
+                            response = parser.get_response()
+
+                            print ('headers: {} \n body: {} \n method: {} \n'
+                                   'uri: {} \n version protocol: {} \n'.format(
+                                parser.headers, parser.body, parser.method,
+                                parser.uri, parser.version_protocol
+                            ))
+
+                            conn.sendall('your data: {}'.format(response).encode('utf8'))
 
                 else:
 

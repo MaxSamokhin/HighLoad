@@ -1,5 +1,5 @@
 from server import Server
-from constant import *
+from constant.server_constant import *
 from logger import Logger
 
 
