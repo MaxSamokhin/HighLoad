@@ -1,4 +1,4 @@
-from constant.constant import *
+from constant.method import *
 
 
 class Parser:
