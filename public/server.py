@@ -4,6 +4,7 @@ import os
 import socket
 from logger import Logger
 from request import Request
+from response import Response
 
 
 class Server:
@@ -46,8 +47,10 @@ class Server:
                             # print('Request: {}'.format(request.decode()))
 
                             pars_request = Request(request.decode())
+                            response = Response(pars_request, root_dir='/home/max/max/highload/HighLoad')
+                            response.get_response()
+
                             response = pars_request.get_headers()
-                            print(response)
 
                             # print ('headers: {} \n method: {} \n'
                             #        'uri: {} \n version protocol: {} \n'.format(
@@ -65,5 +68,4 @@ class Server:
             Logger.info("Pid workers: {}".format(self.pid_workers))
 
             for pid in self.pid_workers:
-                Logger.info('param pam pam {} '.format(pid))
                 os.waitpid(pid, 0)

@@ -1,5 +1,4 @@
 from urllib.parse import urlparse, unquote
-from constant.content_type import CONTENT_TYPE
 
 
 class Request:
@@ -8,10 +7,10 @@ class Request:
         self.headers, method, uri, self.version_protocol = self.__parse_request(request)
         self.host = self.headers.get('Host', '')
         self.url, self.path = self.__parse_url(uri)
-        self.content_type = CONTENT_TYPE.get(self.path.split('.')[-1], '')
+        self.file_type = self.path.split('.')[-1]
 
-    def __parse_request(self, request):
-        data = request.split('\r\n\r\n')
+    def __parse_request(self, req):
+        data = req.split('\r\n\r\n')
         data_for_headers = data[0].split('\r\n')
 
         return [{elem.split(': ')[0]: elem.split(': ')[1]  # headers
@@ -38,5 +37,5 @@ class Request:
     def get_path(self):
         return self.path
 
-    def get_content_type(self):
-        return self.content_type
+    def get_file_type(self):
+        return self.file_type
