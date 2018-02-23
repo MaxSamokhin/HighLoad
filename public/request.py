@@ -4,7 +4,7 @@ from urllib.parse import urlparse, unquote
 class Request:
 
     def __init__(self, request):
-        self.headers, method, uri, self.version_protocol = self.__parse_request(request)
+        self.headers, self.method, uri, self.version_protocol = self.__parse_request(request)
         self.host = self.headers.get('Host', '')
         self.url, self.path = self.__parse_url(uri)
         self.file_type = self.path.split('.')[-1]
@@ -39,3 +39,6 @@ class Request:
 
     def get_file_type(self):
         return self.file_type
+
+    def get_method(self):
+        return self.method

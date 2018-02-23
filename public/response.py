@@ -19,12 +19,17 @@ class Response:
         self.__create_response(request, root_dir)
 
     def __create_response(self, req, root_dir):
+        if req.get_method() not in (GET, HEAD):
+            self.code = METHOD_NOT_ALLOWED
+            return
         filename = os.path.normpath(root_dir + '/' + req.get_path())
-
-        with open(filename, 'rb') as f:
-            self.content = f.read() if req.get_method() == GET else b''
-            self.content_length = len(self.content)
-            self.code = OK
+        try:
+            with open(filename, 'rb') as f:
+                self.content = f.read() if req.get_method() == GET else b''
+                self.content_length = len(self.content)
+                self.code = OK
+        except IOError as e:
+            print('Error  -  file not found:    {}'.format(e.filename))
 
     def get_response(self):
         if self.code == OK:

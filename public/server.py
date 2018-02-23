@@ -48,9 +48,6 @@ class Server:
 
                             pars_request = Request(request.decode())
                             response = Response(pars_request, root_dir='/home/max/max/highload/HighLoad')
-
-                            print(response.get_response().decode())
-
                             conn.sendall(response.get_response())
 
                 else:
