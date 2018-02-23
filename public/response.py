@@ -26,6 +26,12 @@ class Response:
             self.content_length = len(self.content)
             self.code = OK
 
+    def get_response(self):
+        if self.code == OK:
+            return self.__ok()
+
+        return self.__error()
+
     def __ok(self):
         return (
             'HTTP/{version} {status}\r\n'
@@ -41,4 +47,17 @@ class Response:
             date=datetime.utcnow().strftime(HTTP_DATE),
             content_length=self.content_length,
             content_type=self.content_type
-        )
+        ).encode() + self.content
+
+    def __error(self):
+        return (
+            'HTTP/{version} {status}\r\n'
+            'Server: {server}\r\n'
+            'Date: {date}\r\n'
+            'Connection: Close\r\n\r\n'
+        ).format(
+            version=HTTP_VERSION,
+            status=RESPONSE_STATUS.get(self.code),
+            server=SERVER_NAME,
+            date=datetime.utcnow().strftime(HTTP_DATE),
+        ).encode()

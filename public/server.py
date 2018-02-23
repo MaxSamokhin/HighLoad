@@ -48,17 +48,10 @@ class Server:
 
                             pars_request = Request(request.decode())
                             response = Response(pars_request, root_dir='/home/max/max/highload/HighLoad')
-                            response.get_response()
 
-                            response = pars_request.get_headers()
+                            print(response.get_response().decode())
 
-                            # print ('headers: {} \n method: {} \n'
-                            #        'uri: {} \n version protocol: {} \n'.format(
-                            #     parser.headers, parser.method,
-                            #     parser.uri, parser.version_protocol
-                            # ))
-
-                            conn.sendall('your data: {}'.format(response).encode('utf8'))
+                            conn.sendall(response.get_response())
 
                 else:
 
