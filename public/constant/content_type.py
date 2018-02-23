@@ -1,4 +1,4 @@
-CONTENT_TYPES = {
+CONTENT_TYPE = {
     'html': 'text/html',
     'css': 'text/css',
     'js': 'application/javascript',

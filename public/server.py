@@ -3,7 +3,7 @@
 import os
 import socket
 from logger import Logger
-from parser import Parser
+from request import Request
 
 
 class Server:
@@ -45,8 +45,9 @@ class Server:
 
                             # print('Request: {}'.format(request.decode()))
 
-                            pars_request = Parser(request.decode())
-                            response = pars_request.get_response()
+                            pars_request = Request(request.decode())
+                            response = pars_request.get_headers()
+                            print(response)
 
                             # print ('headers: {} \n method: {} \n'
                             #        'uri: {} \n version protocol: {} \n'.format(
