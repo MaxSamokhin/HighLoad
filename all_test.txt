@@ -1,0 +1,106 @@
+Request: GET /httptest/dir2/ HTTP/1.1
+Host: localhost:8001
+Accept-Encoding: identity
+
+
+Request: GET /httptest/../../../../../../../../../../../../../etc/passwd HTTP/1.1
+Host: localhost:8001
+Accept-Encoding: identity
+
+
+Request:
+
+Request: GET /httptest/dir1/dir12/dir123/deep.txt HTTP/1.1
+Host: localhost:8001
+Accept-Encoding: identity
+
+
+Request: GET /httptest/smdklcdsmvdfjnvdfjvdfvdfvdsfssdmfdsdfsd.html HTTP/1.1
+Host: localhost:8001
+Accept-Encoding: identity
+
+
+Request: GET /httptest/dir2/%70%61%67%65%2e%68%74%6d%6c HTTP/1.1
+Host: localhost:8001
+Accept-Encoding: identity
+
+
+Request: GET /httptest/text..txt HTTP/1.1
+Host: localhost:8001
+Accept-Encoding: identity
+
+
+Request: GET /httptest/dir2/page.html?arg1=value&arg2=value HTTP/1.1
+Host: localhost:8001
+Accept-Encoding: identity
+
+
+Request: GET /httptest/space%20in%20name.txt HTTP/1.1
+Host: localhost:8001
+Accept-Encoding: identity
+
+
+Request: GET /httptest/splash.css HTTP/1.1
+Host: localhost:8001
+Accept-Encoding: identity
+
+
+Request: GET /httptest/pic_ask.gif HTTP/1.1
+Host: localhost:8001
+Accept-Encoding: identity
+
+
+Request: GET /httptest/dir2/page.html HTTP/1.1
+Host: localhost:8001
+Accept-Encoding: identity
+
+
+Request: GET /httptest/ef35c.jpeg HTTP/1.1
+Host: localhost:8001
+Accept-Encoding: identity
+
+
+Request: GET /httptest/160313.jpg HTTP/1.1
+Host: localhost:8001
+Accept-Encoding: identity
+
+
+Request: GET /httptest/jquery-1.9.1.js HTTP/1.1
+Host: localhost:8001
+Accept-Encoding: identity
+
+
+Request: GET /httptest/logo.v2.png HTTP/1.1
+Host: localhost:8001
+Accept-Encoding: identity
+
+
+Request: GET /httptest/b16261023.swf HTTP/1.1
+Host: localhost:8001
+Accept-Encoding: identity
+
+
+Request: HEAD /httptest/dir2/page.html HTTP/1.0
+
+
+Request: GET /httptest/dir1/ HTTP/1.1
+Host: localhost:8001
+Accept-Encoding: identity
+
+
+Request: GET /httptest/wikipedia_russia.html HTTP/1.1
+Host: localhost:8001
+Accept-Encoding: identity
+
+
+Request: POST /httptest/dir2/page.html HTTP/1.1
+Host: localhost:8001
+Accept-Encoding: identity
+Content-Length: 0
+
+
+Request: GET / HTTP/1.1
+
+Request: GET /httptest/ HTTP/1.1
+Host: localhost:8001
+Accept-Encoding: identity

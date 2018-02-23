@@ -36,18 +36,23 @@ class Server:
                         conn, adr = sock.accept()
                         with conn:
                             request = conn.recv(self.chunk)
+
+                            if len(request.strip()) == 0:  # empty  request
+                                conn.close()
+                                continue
+
                             Logger.info(request.decode('utf8'))
 
-                            print('Request: {}'.format(request.decode()))
+                            # print('Request: {}'.format(request.decode()))
 
-                            parser = Parser(request.decode())
-                            response = parser.get_response()
+                            pars_request = Parser(request.decode())
+                            response = pars_request.get_response()
 
-                            print ('headers: {} \n body: {} \n method: {} \n'
-                                   'uri: {} \n version protocol: {} \n'.format(
-                                parser.headers, parser.body, parser.method,
-                                parser.uri, parser.version_protocol
-                            ))
+                            # print ('headers: {} \n method: {} \n'
+                            #        'uri: {} \n version protocol: {} \n'.format(
+                            #     parser.headers, parser.method,
+                            #     parser.uri, parser.version_protocol
+                            # ))
 
                             conn.sendall('your data: {}'.format(response).encode('utf8'))
 
