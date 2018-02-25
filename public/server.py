@@ -8,13 +8,14 @@ from response import Response
 
 
 class Server:
-    def __init__(self, host, port, workers, size_queue, chunk):
+    def __init__(self, host, port, count_cpu, size_queue, chunk, root_dir):
         Logger.info('Init server param')
         self.address_pair = (host, int(port))
-        self.workers = workers
+        self.count_cpu = count_cpu
         self.pid_workers = []
         self.size_queue = size_queue
         self.chunk = chunk
+        self.root_dir = root_dir
 
     def start(self):
         Logger.info('Server start')
@@ -24,7 +25,7 @@ class Server:
             sock.listen(self.size_queue)
             Logger.info('Parent pid: {}'.format(os.getpid()))
 
-            for _ in range(self.workers):
+            for _ in range(self.count_cpu):
                 pid = os.fork()
 
                 # fork в родительский процесс вернет PID дочернего процесса,
@@ -43,7 +44,7 @@ class Server:
                                 continue
 
                             pars_request = Request(request.decode())
-                            response = Response(pars_request, root_dir='/home/max/max/highload/HighLoad')
+                            response = Response(pars_request, root_dir=self.root_dir)
                             conn.sendall(response.get_response())
 
                 else:

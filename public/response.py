@@ -57,8 +57,7 @@ class Response:
                 self.content_length = len(content)
                 self.code = OK
         except IOError as e:
-            # Logger.info('Error  -  file not found:    {}'.format(e.filename))
-            pass
+            Logger.info('Error  -  file not found:    {}'.format(e.filename))
 
     def get_response(self):
         if self.code == OK:
