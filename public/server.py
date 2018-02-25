@@ -19,7 +19,7 @@ class Server:
     def start(self):
         Logger.info('Server start')
         with socket.socket() as sock:
-
+            sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
             sock.bind(self.address_pair)
             sock.listen(self.size_queue)
             Logger.info('Parent pid: {}'.format(os.getpid()))
@@ -42,10 +42,6 @@ class Server:
                                 conn.close()
                                 continue
 
-                            Logger.info(request.decode('utf8'))
-
-                            # print('Request: {}'.format(request.decode()))
-
                             pars_request = Request(request.decode())
                             response = Response(pars_request, root_dir='/home/max/max/highload/HighLoad')
                             conn.sendall(response.get_response())
@@ -53,9 +49,7 @@ class Server:
                 else:
 
                     self.pid_workers.append(pid)
-                    Logger.info('Parent pid: {} Children pid: {}'.format(os.getpid(), pid))
-
-            Logger.info("Pid workers: {}".format(self.pid_workers))
+                    # Logger.info('Parent pid: {} Children pid: {}'.format(os.getpid(), pid))
 
             for pid in self.pid_workers:
                 os.waitpid(pid, 0)

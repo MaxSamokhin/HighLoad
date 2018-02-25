@@ -1,11 +1,12 @@
 OK = 200
 NOT_FOUND = 404
 METHOD_NOT_ALLOWED = 405
+FORBIDDEN = 403
 
 
 RESPONSE_STATUS = {
     200: '200 OK',
-    403: '403 Forbidden',
+    403: '403 FORBIDDEN',
     404: '404 NOT FOUND',
-    405: '405 Method Not Allowed'
+    405: '405 METHOD NOT ALLOWED'
 }
