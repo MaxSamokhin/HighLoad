@@ -10,4 +10,3 @@ ADD ./ /var/www/html/
 CMD python3 /var/www/html/public/main.py -r /var/www/html
 
 EXPOSE 80
-
