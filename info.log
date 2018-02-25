@@ -1,0 +1,11 @@
+2018-02-25 15:44:24,111:INFO:Init server param
+2018-02-25 15:44:24,111:INFO:Server start
+2018-02-25 15:44:24,111:INFO:Parent pid: 28402
+2018-02-25 15:44:24,112:INFO:Child pid: 28403
+2018-02-25 15:44:24,112:INFO:Child pid: 28404
+2018-02-25 15:44:24,112:INFO:Child pid: 28405
+2018-02-25 15:44:24,113:INFO:Child pid: 28406
+2018-02-25 15:44:38,780:INFO:Error  -  file not found:    /home/max/max/highload/HighLoad/httptest/smdklcdsmvdfjnvdfjvdfvdfvdsfssdmfdsdfsd.html
+2018-02-25 15:44:38,800:INFO:Error  -  file not found:    /home/max/max/highload/HighLoad/httptest/dir1
+2018-02-25 15:44:38,805:INFO:Error  -  file not found:    /home/max/max/highload/HighLoad
+2018-02-25 15:44:38,805:INFO:Error  -  file not found:    /home/max/max/highload/HighLoad/httptest
