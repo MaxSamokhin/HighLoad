@@ -1,0 +1,54 @@
+2018-03-05 23:03:57,135:INFO:
+port: 80
+count cpu: 4 
+root dir: /var/www/html 
+
+2018-03-05 23:03:57,135:INFO:Server start
+2018-03-05 23:03:57,136:INFO:Parent pid: 25575
+2018-03-05 23:03:57,136:INFO:Parent pid: 25575 Children pid: 25576
+2018-03-05 23:03:57,136:INFO:Child pid: 25576
+2018-03-05 23:03:57,137:INFO:Parent pid: 25575 Children pid: 25577
+2018-03-05 23:03:57,137:INFO:Child pid: 25577
+2018-03-05 23:03:57,138:INFO:Parent pid: 25575 Children pid: 25578
+2018-03-05 23:03:57,138:INFO:Child pid: 25578
+2018-03-05 23:03:57,138:INFO:Parent pid: 25575 Children pid: 25579
+2018-03-05 23:03:57,138:INFO:Child pid: 25579
+2018-03-05 23:04:35,299:INFO:Error  -  file not found:    /var/www/html/httptest/dir2
+2018-03-05 23:04:35,301:INFO:Error  -  file not found:    /var/www/html/httptest/dir1/dir12/dir123/deep.txt
+2018-03-05 23:04:35,302:INFO:Error  -  file not found:    /var/www/html/httptest/smdklcdsmvdfjnvdfjvdfvdfvdsfssdmfdsdfsd.html
+2018-03-05 23:04:35,304:INFO:Error  -  file not found:    /var/www/html/httptest/dir2/page.html
+2018-03-05 23:04:35,305:INFO:Error  -  file not found:    /var/www/html/httptest/text..txt
+2018-03-05 23:04:35,306:INFO:Error  -  file not found:    /var/www/html/httptest/dir2/page.html
+2018-03-05 23:04:35,307:INFO:Error  -  file not found:    /var/www/html/httptest/space in name.txt
+2018-03-05 23:04:35,308:INFO:Error  -  file not found:    /var/www/html/httptest/splash.css
+2018-03-05 23:04:35,309:INFO:Error  -  file not found:    /var/www/html/httptest/pic_ask.gif
+2018-03-05 23:04:35,310:INFO:Error  -  file not found:    /var/www/html/httptest/dir2/page.html
+2018-03-05 23:04:35,311:INFO:Error  -  file not found:    /var/www/html/httptest/ef35c.jpeg
+2018-03-05 23:04:35,311:INFO:Error  -  file not found:    /var/www/html/httptest/160313.jpg
+2018-03-05 23:04:35,312:INFO:Error  -  file not found:    /var/www/html/httptest/jquery-1.9.1.js
+2018-03-05 23:04:35,314:INFO:Error  -  file not found:    /var/www/html/httptest/logo.v2.png
+2018-03-05 23:04:35,314:INFO:Error  -  file not found:    /var/www/html/httptest/b16261023.swf
+2018-03-05 23:04:35,315:INFO:Error  -  file not found:    /var/www/html/httptest/dir2/page.html
+2018-03-05 23:04:35,316:INFO:Error  -  file not found:    /var/www/html/httptest/dir1
+2018-03-05 23:04:35,317:INFO:Error  -  file not found:    /var/www/html/httptest/wikipedia_russia.html
+2018-03-05 23:04:35,319:INFO:Error  -  file not found:    /var/www/html
+2018-03-05 23:04:35,319:INFO:Error  -  file not found:    /var/www/html/httptest
+2018-03-05 23:05:25,079:INFO:
+port: 80
+count cpu: 4 
+root dir: /home/max/max/highload/HighLoad 
+
+2018-03-05 23:05:25,080:INFO:Server start
+2018-03-05 23:05:25,080:INFO:Parent pid: 25661
+2018-03-05 23:05:25,080:INFO:Parent pid: 25661 Children pid: 25662
+2018-03-05 23:05:25,080:INFO:Child pid: 25662
+2018-03-05 23:05:25,081:INFO:Parent pid: 25661 Children pid: 25663
+2018-03-05 23:05:25,081:INFO:Child pid: 25663
+2018-03-05 23:05:25,081:INFO:Parent pid: 25661 Children pid: 25664
+2018-03-05 23:05:25,081:INFO:Child pid: 25664
+2018-03-05 23:05:25,082:INFO:Parent pid: 25661 Children pid: 25665
+2018-03-05 23:05:25,082:INFO:Child pid: 25665
+2018-03-05 23:05:30,991:INFO:Error  -  file not found:    /home/max/max/highload/HighLoad/httptest/smdklcdsmvdfjnvdfjvdfvdfvdsfssdmfdsdfsd.html
+2018-03-05 23:05:31,013:INFO:Error  -  file not found:    /home/max/max/highload/HighLoad/httptest/dir1
+2018-03-05 23:05:31,032:INFO:Error  -  file not found:    /home/max/max/highload/HighLoad
+2018-03-05 23:05:31,032:INFO:Error  -  file not found:    /home/max/max/highload/HighLoad/httptest

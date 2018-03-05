@@ -2,7 +2,7 @@
 
 import os
 from datetime import datetime
-# from logger import Logger
+from logger import Logger
 
 from constant.request_method import GET, HEAD, POST
 from constant.content_type import CONTENT_TYPE
@@ -58,7 +58,7 @@ class Response:
                 self.code = OK
         except IOError as e:
             pass
-            # Logger.info('Error  -  file not found:    {}'.format(e.filename))
+            Logger.info('Error  -  file not found:    {}'.format(e.filename))
 
     def get_response(self):
         if self.code == OK:

@@ -2,7 +2,7 @@
 
 import os
 import socket
-# from logger import Logger
+from logger import Logger
 from request import Request
 from response import Response
 
@@ -18,12 +18,12 @@ class Server:
         self.root_dir = root_dir
 
     def start(self):
-        # Logger.info('Server start')
+        Logger.info('Server start')
         with socket.socket() as sock:
             sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)  # чтобы несколько приложений могли «слушать» сокет
             sock.bind(self.address_pair)
             sock.listen(self.size_queue)
-            # Logger.info('Parent pid: {}'.format(os.getpid()))
+            Logger.info('Parent pid: {}'.format(os.getpid()))
 
             for _ in range(self.count_cpu):
                 pid = os.fork()
@@ -32,7 +32,7 @@ class Server:
                 # а в дочернем процессе переменная pid будет равна нулю
 
                 if pid == 0:
-                    # Logger.info('Child pid: {}'.format(os.getpid()))
+                    Logger.info('Child pid: {}'.format(os.getpid()))
 
                     while True:
                         conn, adr = sock.accept()
@@ -50,7 +50,7 @@ class Server:
                 else:
 
                     self.pid_workers.append(pid)
-                    # Logger.info('Parent pid: {} Children pid: {}'.format(os.getpid(), pid))
+                    Logger.info('Parent pid: {} Children pid: {}'.format(os.getpid(), pid))
 
             for pid in self.pid_workers:
                 os.waitpid(pid, 0)
