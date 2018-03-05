@@ -1,5 +1,5 @@
 HOST = '127.0.0.1'
-PORT = '8001'
+PORT = '80'
 COUNT_CPU = 4  # Number of Cores
 SIZE_QUEUE = 1024
 CHUNK = 1024

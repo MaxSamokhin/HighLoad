@@ -20,7 +20,8 @@ class Request:
     def __parse_url(self, uri):
         full_url = '//' + self.host + uri
         full_url = urlparse(full_url)
-        return full_url.geturl(), unquote(full_url.path)
+        return full_url.geturl(), \
+               unquote(full_url.path)  # unquote - Replace %xx escapes by their single-character equivalent.
 
     def get_headers(self):
         return self.headers

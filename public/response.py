@@ -27,7 +27,7 @@ class Response:
             return
 
         filename = os.path.normpath(root_dir + req.get_path())
-        self.code = NOT_FOUND
+        self.code = NOT_FOUND  # не существует файла или дирректории или в пути нет root
 
         # Logger.info('\n\nroot_dir: {} \n'
         #             'path: {} \n'
@@ -42,12 +42,12 @@ class Response:
         #     os.path.exists(os.path.join(filename))
         # ))
 
-        if os.path.commonprefix([filename, root_dir]) != root_dir:
+        if os.path.commonprefix([filename, root_dir]) != root_dir:  # в пути нет root - /etc/passwd
             return
 
         if os.path.isfile(os.path.join(filename, MAIN_PAGE)):
-            filename = os.path.join(filename, MAIN_PAGE)
-        elif os.path.exists(os.path.join(filename)):
+            filename = os.path.join(filename, MAIN_PAGE)  # в дирректории берем MAIN_PAGE
+        elif os.path.exists(os.path.join(filename)):  # существуют файл или дирректория
             self.code = FORBIDDEN
 
         try:
