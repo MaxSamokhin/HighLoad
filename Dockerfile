@@ -3,16 +3,15 @@ FROM ubuntu:16.04
 MAINTAINER Samokhin Max
 USER root
 
-RUN apt-get -y update
-RUN     apt-get install -y python3
-RUN apt-get -y install python3-pip
-RUN pip3 install urllib3
+RUN  apt-get -y update
+RUN  apt-get install -y python3
+RUN  apt-get -y install python3-pip
+RUN  pip3 install urllib3
 
 
-ADD ./ /var/www/html/
-ADD ./httpd.conf /
-
-#RUN python3 -m pip install -r /var/www/html/req.txt
-CMD python3 /var/www/html/public/main.py
+ADD . .
 
 EXPOSE 80
+
+CMD python3 public/main.py
+

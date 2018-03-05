@@ -1,5 +1,5 @@
 def load_config():
-    with open('httpd.conf') as f:
+    with open('/etc/httpd.conf') as f:
         config = {}
 
         lines = f.read().splitlines()
