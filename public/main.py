@@ -11,7 +11,7 @@ from parser_config import load_config
 
 def main():
 
-    if False:
+    if True:
         config = load_config()
         port = int(config['listen'])
         count_cpu = int(config['cpu_limit'])
