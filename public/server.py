@@ -20,7 +20,8 @@ class Server:
     def start(self):
         Logger.info('Server start')
         with socket.socket() as sock:
-            sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)  # чтобы несколько приложений могли «слушать» сокет
+            # чтобы несколько приложений могли «слушать» сокет
+            sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR,1)
             sock.bind(self.address_pair)
             sock.listen(self.size_queue)
             Logger.info('Parent pid: {}'.format(os.getpid()))

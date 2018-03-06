@@ -1,5 +1,6 @@
 from urllib.parse import urlparse, unquote
 
+
 class Request:
 
     def __init__(self, request):
